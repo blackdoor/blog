@@ -45,6 +45,17 @@ ul {
     }
 }
 
+@font-face {
+	font-family: 'Terminus';
+	src: url('../fonts/terminus.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'TerminusBold';
+	src: url('../fonts/terminus_bold.ttf') format('truetype');
+}
+
+
 
 .wrapper {
     max-width: 600px;
@@ -162,14 +173,14 @@ ul {
         }
         code {
             padding: 3px;
-			font-family: "Courier New", Courier, monospace;
+			font-family: "Terminus", Terminus, monospace;
             font-size: 0.9em;
             border-radius: 3px;
             background: $color-grey;
         }
         .highlight {
             margin: 10px;
-			font-family: "Courier New", Courier, monospace;
+			font-family: "Terminus", Terminus, monospace;
             margin-bottom: 15px;
             padding: 10px;
             line-height: 1.5;
