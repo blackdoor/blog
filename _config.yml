@@ -1,0 +1,28 @@
+# Blog settings
+baseurl: "/blog"
+permalink: /:title/
+
+
+# My variables
+name: BlackLog
+description: Futuristic web design
+google_verification: null
+
+
+# File management
+include: [".htaccess"]
+exclude: ["README.md", "LICENSE"]
+
+
+# Sass
+sass:
+  style: :compressed
+  sass_dir: _sass
+
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
