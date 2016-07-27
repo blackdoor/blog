@@ -29,7 +29,7 @@ alert(s);
 
 ```python
 def my_python_function():
-	do-a-thing()
+  do-a-thing()
 ```
 
 {% highlight ruby %}
