@@ -6,7 +6,7 @@ layout: default
 <div class="blog">
     <ul>
         {% for post in site.posts %}
-        <li>
+        <li class="main">
             <span class="date">[{{ post.date | date: '%m.%d.%Y' }}]</span> <span>{{ post.author }}</span>: <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
         </li>
         {% endfor %}
