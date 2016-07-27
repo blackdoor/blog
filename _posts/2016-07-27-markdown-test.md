@@ -27,20 +27,15 @@ var s = "JavaScript syntax highlighting";
 alert(s);
 ```
 
-```python
+``` ruby
 def my_python_function():
   do-a-thing()
 ```
 
-{% highlight ruby %}
-def show
-  @widget = Widget(params[:id])
-  respond_to do |format|
-    format.html # show.html.erb
-    format.json { render json: @widget }
-  end
-end
-{% endhighlight %}
+```css
+fake-css: none;
+color-css: tons;
+```
 
 > Blockquotes are very handy in posts to emulate reply text.
 > This line is part of the same quote.
