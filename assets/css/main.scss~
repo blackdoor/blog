@@ -173,8 +173,9 @@ ul {
             padding: 10px;
             line-height: 1.5;
             border-radius: 3px;
-            background: $color-grey;
+            background: $color-black;
             code {
+                color: $color-code;
                 background: none;
             }
         }
