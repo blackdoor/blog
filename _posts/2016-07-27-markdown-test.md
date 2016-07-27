@@ -27,6 +27,11 @@ var s = "JavaScript syntax highlighting";
 alert(s);
 ```
 
+```python
+def my_python_function():
+	do-a-thing()
+```
+
 > Blockquotes are very handy in posts to emulate reply text.
 > This line is part of the same quote.
 
