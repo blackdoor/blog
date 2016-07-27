@@ -11,12 +11,9 @@ Duis elementum sit amet erat ac mollis. Nunc sagittis consequat ante, sit amet v
 
 Here we have *italics* and **bold**.
 
-1. First ordered list item
-2. Another item
-  * Unordered sub-list. 
-1. Actual numbers don't matter, just that it's a number
-  1. Ordered sub-list
-4. And another item.
+* list?
+* list??
+* list???
 
 [I'm an inline-style link](https://www.google.com)
 
