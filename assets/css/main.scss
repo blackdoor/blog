@@ -178,6 +178,11 @@ ul {
             border-radius: 3px;
         }
         .highlight {
+            word-break: normal;
+            word-wrap: normal;
+            white-space: pre;
+            overflow: auto;
+            max-width:560px;
             margin: 10px;
 			font-family: "Terminus", Terminus, monospace;
             margin-bottom: 15px;
