@@ -7,7 +7,10 @@ layout: default
     <ul>
         {% for post in site.posts %}
         <li class="main">
-            <span class="date">[{{ post.date | date: '%m.%d.%Y' }}]</span> <span>{{ post.author }}</span>: <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        	<div class="post-row">
+            	<div class="date">[{{ post.date | date: '%m.%d.%Y' }}] {{ post.author }}:</div>
+            	<div class="hyper"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
+            </div>
         </li>
         {% endfor %}
     </ul>
