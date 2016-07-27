@@ -2,28 +2,13 @@
 layout: default
 ---
 
-<center><p>A blog about programming - updated every Monday.</p></center><hr>
-
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h3>{{ post.title }}</h3>
-
-      <div class="entry">
-      	{{ post.date | date_to_string }}
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
-<div class="my_equipment">
-    <h2>my equipment</h2>
+{% include header.html %}
+<div class="blog">
     <ul>
-        <li>CPU: AMD FX-8350</li>
-        <li>GPU: XFX R9 290X</li>
-        <li>Case: CoolerMaster N200 mini-tower</li>
+        {% for post in site.posts %}
+        <li>
+            <span class="date">[{{ post.date | date: '%m.%d.%Y' }}]</span> <span>{{ post.author }}</span>: <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
     </ul>
 </div>
