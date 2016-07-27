@@ -3,12 +3,12 @@
 
 @import "reset";
 @import "config";
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
 
 body {
     color: $color-black;
     background: $color-white;
-    font-family: 'Roboto', ;
+    font-family: 'Noto Sans', ;
     font-size: 100%;
     font-weight: 400;
 }
