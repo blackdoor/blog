@@ -111,19 +111,17 @@ ul {
         margin-bottom: 5px;
     }
     .date {
-        float:left;
-        width: 200px;
+        white-space: nowrap;  
+        width: 1px;
+        padding-right: 10px;
     }
     .hyper
     {
-        float:left;
         word-break: normal;
         word-wrap: normal;
-        max-width:360px;
-        padding-bottom:10px;
     }
-    .post-row {
-        padding-bottom: 10px;
+    td {
+        padding-bottom: 15px;
     }
 }
 

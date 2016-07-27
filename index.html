@@ -4,14 +4,12 @@ layout: default
 
 {% include header.html %}
 <div class="blog">
-    <ul>
+    <table>
         {% for post in site.posts %}
-        <li class="main">
-        	<div class="post-row">
-            	<div class="date">[{{ post.date | date: '%m.%d.%Y' }}] {{ post.author }}:</div>
-            	<div class="hyper"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
-            </div>
-        </li>
+        <tr class="post-line">
+            	<td class="date">[{{ post.date | date: '%m.%d.%Y' }}] {{ post.author }}:</td>
+            	<td class="hyper"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></td>
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
 </div>
