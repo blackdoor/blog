@@ -162,6 +162,7 @@ ul {
         }
         code {
             padding: 3px;
+	    font-family: Terminus;
             font-size: 0.9em;
             border-radius: 3px;
             background: $color-grey;

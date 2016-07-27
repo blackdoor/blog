@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<div class="about">
+    <a class="about__back" href="/blog/">&lt;-- back</a>
+    <h1 class="about__title">About Us:</h1>
+    <div class="about__content">
+        {{ content }}
+    </div>
+</div>
