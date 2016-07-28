@@ -1,18 +1,3 @@
-- name: Jacob "yacklebeam" Troxel
-  bio : Lorem ipsum dolor sit amet, consectetur adipiscing elit. In efficitur 
-       sit amet tortor ut rutrum. Nullam eu cursus turpis. Nullam euismod 
-       dui nec libero aliquam sodales. Pellentesque placerat tempor purus, 
-       nec ullamcorper turpis congue eu. Ut mollis quis magna quis rutrum. 
-       Fusce rutrum leo massa, eu aliquet odio convallis vitae. Ut metus dolor, 
-       auctor vel semper sit amet, pellentesque vitae quam. Proin quis faucibus 
-       nunc. Sed placerat mattis quam quis condimentum. Vestibulum a nulla et 
-       ante pharetra vehicula. Etiam pharetra aliquam urna et dictum.
-  websites:
-    - name: github
-      url : https://github.com/yacklebeam?tab=repositories
-    - name: twitter
-      url : https://twitter.com/yacklebeam
-
 - name: Cj "csubj" Buresch
   bio : I came for the free food but now I've been here too long to just leave. 
   websites:
@@ -34,3 +19,13 @@
 
 - name: Nathaniel "kag0" Fischer-san 
   bio : Surfing the mortal coil; witness to the sunset of man. 
+
+- name: Jacob "yacklebeam" Troxel
+  bio : Software Engineer and Hobbyist Game Developer. Long-time D&D player and Dungeon Master.  Cares too much about mechanical keyboards.  Currently working on better ways to detect virtual object collisions.  Interests include crafting props for tabletop games, building and running D&D campaigns, developing video game engines and infrastructures, other related software development, and of course, playing video games (lots of that).  B.S. in Computer Science.
+  websites:
+    - name: github
+      url : https://github.com/yacklebeam?tab=repositories
+    - name: twitter
+      url : https://twitter.com/yacklebeam
+    - name: website
+      url: https://yacklebeam.github.io
