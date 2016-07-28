@@ -135,18 +135,19 @@ ul {
         font-style: italic;
     }
     &__content {
-        padding-top: 40px;
+        padding-top: 20px;
         h1 {
-            font-size: 1.25em;
-            font-weight: 700;
+            font-size: 1.5em;
+            font-weight: 500;
             margin-top: 30px;
             margin-bottom: 5px;
+            padding-bottom: 5px;
             color: $color-link;
         }
         h2 {
-            font-size: 1.0em;
-            font-weight: 700;
-            margin-top: 30px;
+            font-size: 1.25em;
+            font-weight: 500;
+            margin-top: 10px;
             margin-bottom: 5px;
             color: $color-link;
         }

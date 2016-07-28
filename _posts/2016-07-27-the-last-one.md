@@ -5,8 +5,11 @@ title: The last fake post.
 ---
 
 # Header1
+Some text under the Header looks like this.
+
 ## Header2
 Some fun text about something
+
 ## Header2.1
 Some more fun text, isn't this FUN?
 
