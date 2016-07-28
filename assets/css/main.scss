@@ -227,7 +227,7 @@ ul {
 .about {
     &__title {
         font-size: 1.6em;
-        font-weight: 700;
+        font-weight: 500;
         margin-top: 20px;
         margin-bottom: 10px;
     }
@@ -235,7 +235,6 @@ ul {
         margin-top: 20px;
         h1 {
             font-size: 1.2em;
-            font-style: italic;
             margin-top: 30px;
             margin-bottom: 5px;
         }
@@ -243,6 +242,9 @@ ul {
             font-size: 1em;
             line-height: 150%;
             margin-bottom: 10px;
+        }
+        a {
+            padding-right: 10px;
         }
     }
 }
