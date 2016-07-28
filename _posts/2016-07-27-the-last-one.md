@@ -4,18 +4,27 @@ author: jacob
 title: The last fake post.
 ---
 
-# This is it
+# Header1
+## Header2
+### Header3
+#### Header4
 
-The last fake post.
-Check out the highlighting.
+*italics*
+**bold**
 
 ```c
 int i;
 int j = 0;
 for(i = 0; i < j; ++i)
 {
-	printf("%d\n", i);
+    printf("%d\n", i);
 }
 ```
+
+and some `inline code` too.
+
+> block quote?
+
+> or no?
 
 -JT
