@@ -1,0 +1,80 @@
+Post Style Guide
+
+Currently, blackdoor.log supports the following markdown:
+
+///////////////////////////
+//
+//	HEADERS
+//
+///////////////////////////
+- "# Header" produces an h1.  Uses these as the primary headers in your posts (major sections).  Please remember that in the markdown file, you need a newline before this one, and a space between the octothorpe and the text.
+- "## Header" produces an h2.  Use this as your secondary headers (under an H1 section).  Again, remember newline and space.
+(we do technically support "###" and "####" but they are not styled.)
+
+///////////////////////////
+//
+//	ITALICS & BOLD
+//
+///////////////////////////
+- We support normal italics with using "*" on either side of the phrase, and normal bold with "**".
+
+///////////////////////////
+//
+//	CODE BLOCKS
+//
+///////////////////////////
+- We support normal code block markdown from Github
+EX:
+
+```python
+def function():
+    print()
+```
+
+Remember to put a newline before your code blocks in the markdown file.
+
+In addition, you can insert code inline by surrounding it with "`".
+
+///////////////////////////
+//
+//	BLOCKQUOTES
+//
+///////////////////////////
+- Blockquotes can be created by placing "> " at the front of any line (watch that space!).  You will also need a newline preceding your blockquote.
+
+- Blockquotes will automatically perform word wrap.
+"> a very very long line.........." will wrap as necessary into one blockquote.
+
+- A single newline will not break up a blockquote.
+"> line one
+ > line two "
+becomes
+"| line one line two"
+
+- Adding an extra newline between quote lines will result in SEPARATE block quotes.
+"> line one
+
+ > line two "
+ becomes
+ | line one
+ | line two
+ BUT HAVE SEPARATE BOXES
+
+ - Finally, to add a newline INSIDE a single blockquote, use <br>
+ "> line one<br>line two"
+ OR
+ "> line one<br>
+  > line two "
+  becomes
+  | line one
+  | line two
+  BUT IN THE SAME BOX
+
+///////////////////////////
+//
+//	LINKS
+//
+///////////////////////////
+- We support normal markdown links.  [I'm an inline-style link](https://www.google.com) produces a link with the text "I'm an inline style link" that links to google.com.
+
+More to come as I add/test it.
