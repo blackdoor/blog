@@ -6,8 +6,8 @@
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
 
 body {
-    color: $color-black;
-    background: $color-white;
+    color: $color-lgrey;
+    background: $color-dgrey;
     font-family: 'Noto Sans', ;
     font-size: 100%;
     font-weight: 400;
@@ -195,6 +195,7 @@ ul {
             font-size: 0.9em;
             border-radius: 3px;
             background: $color-grey;
+            color: #f2f0ec;
         }
         .highlight {
             word-break: normal;
@@ -210,6 +211,7 @@ ul {
             border-radius: 3px;
             background: $color-grey;
             code {
+                font-size: 0.8em;
                 padding:0px;
                 background: none;
             }
