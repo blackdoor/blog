@@ -8,3 +8,14 @@
 
 - name: CJ "csubj" Buresch
   bio: Bio here.
+
+- name: Trent "spacekek" Clostio
+  bio: Full-stack software developer. *NIX enthusiast. Technology hobbyist. On a quest to
+       install and use and insreasingly obscure set of operating systems. Interests include
+       application and network security, SCADA systems, systems programming, software
+       design, and video games. Pursuing CS masters.
+  websites:
+    - name: github
+      url: https://github.com/tclostio?tab=repositories
+    - name: more
+      url: https://tclostio.github.io
