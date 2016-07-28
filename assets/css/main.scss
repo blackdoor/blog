@@ -6,6 +6,9 @@
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
 
 body {
+    tab-size: 4;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
     color: $color-lgrey;
     background: $color-dgrey;
     font-family: 'Noto Sans', ;
@@ -138,6 +141,14 @@ ul {
             font-weight: 700;
             margin-top: 30px;
             margin-bottom: 5px;
+            color: $color-link;
+        }
+        h2 {
+            font-size: 1.0em;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            color: $color-link;
         }
         p {
             font-size: 1em;
