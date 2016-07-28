@@ -1,0 +1,10 @@
+- name: Jacob "yacklebeam" Troxel
+  bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In efficitur sit amet tortor ut rutrum. Nullam eu cursus turpis. Nullam euismod dui nec libero aliquam sodales. Pellentesque placerat tempor purus, nec ullamcorper turpis congue eu. Ut mollis quis magna quis rutrum. Fusce rutrum leo massa, eu aliquet odio convallis vitae. Ut metus dolor, auctor vel semper sit amet, pellentesque vitae quam. Proin quis faucibus nunc. Sed placerat mattis quam quis condimentum. Vestibulum a nulla et ante pharetra vehicula. Etiam pharetra aliquam urna et dictum.
+  websites:
+    - name: github
+      url: https://github.com/yacklebeam?tab=repositories
+    - name: twitter
+      url: https://twitter.com/yacklebeam
+
+- name: CJ "csubj" Buresch
+  bio: Bio here.
