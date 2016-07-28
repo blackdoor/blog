@@ -1,21 +1,36 @@
 - name: Jacob "yacklebeam" Troxel
-  bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In efficitur sit amet tortor ut rutrum. Nullam eu cursus turpis. Nullam euismod dui nec libero aliquam sodales. Pellentesque placerat tempor purus, nec ullamcorper turpis congue eu. Ut mollis quis magna quis rutrum. Fusce rutrum leo massa, eu aliquet odio convallis vitae. Ut metus dolor, auctor vel semper sit amet, pellentesque vitae quam. Proin quis faucibus nunc. Sed placerat mattis quam quis condimentum. Vestibulum a nulla et ante pharetra vehicula. Etiam pharetra aliquam urna et dictum.
+  bio : Lorem ipsum dolor sit amet, consectetur adipiscing elit. In efficitur 
+       sit amet tortor ut rutrum. Nullam eu cursus turpis. Nullam euismod 
+       dui nec libero aliquam sodales. Pellentesque placerat tempor purus, 
+       nec ullamcorper turpis congue eu. Ut mollis quis magna quis rutrum. 
+       Fusce rutrum leo massa, eu aliquet odio convallis vitae. Ut metus dolor, 
+       auctor vel semper sit amet, pellentesque vitae quam. Proin quis faucibus 
+       nunc. Sed placerat mattis quam quis condimentum. Vestibulum a nulla et 
+       ante pharetra vehicula. Etiam pharetra aliquam urna et dictum.
   websites:
     - name: github
-      url: https://github.com/yacklebeam?tab=repositories
+      url : https://github.com/yacklebeam?tab=repositories
     - name: twitter
-      url: https://twitter.com/yacklebeam
+      url : https://twitter.com/yacklebeam
 
-- name: CJ "csubj" Buresch
-  bio: Bio here.
+- name: Cj "csubj" Buresch
+  bio : I came for the free food but now I've been here too long to just leave. 
+  websites:
+    - name: github
+      url : https://github.com/CjBuresch
+    - name: twitter
+      url : https://twitter.com/csubj
 
 - name: Trent "spacekek" Clostio
-  bio: Full-stack software developer. *NIX enthusiast. Technology hobbyist. On a quest to
+  bio : Full-stack software developer. *NIX enthusiast. Technology hobbyist. On a quest to
        install and use an increasingly obscure set of operating systems. Interests include
        application and network security, SCADA systems, systems programming, software
        design, and video games. Pursuing CS masters.
   websites:
     - name: github
-      url: https://github.com/tclostio?tab=repositories
+      url : https://github.com/tclostio?tab=repositories
     - name: more
-      url: https://tclostio.github.io
+      url : https://tclostio.github.io
+
+- name: Nathaniel "kag0" Fischer-san 
+  bio : Surfing the mortal coil; witness to the sunset of man. 
