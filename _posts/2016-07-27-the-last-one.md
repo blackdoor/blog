@@ -27,8 +27,8 @@ for(i = 0; i < j; ++i)
 
 and some `inline code` too.
 
-> block quote?
-
+> block quote?<br>
+> one long block quote
 > or no?
 
 -JT
