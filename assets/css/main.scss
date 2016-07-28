@@ -50,16 +50,9 @@ ul {
 }
 
 @font-face {
-	font-family: 'Terminus';
-	src: url('../fonts/terminus.ttf') format('truetype');
+	font-family: 'Consolas-local';
+	src: url('../fonts/Consolas.ttf') format('truetype');
 }
-
-@font-face {
-	font-family: 'TerminusBold';
-	src: url('../fonts/terminus_bold.ttf') format('truetype');
-}
-
-
 
 .wrapper {
     max-width: 600px;
@@ -191,7 +184,7 @@ ul {
         code {
             padding-left: 3px;
             padding-right: 3px;
-			font-family: "Consolas", monaco, monospace;
+	    font-family: "Consolas-local", monaco, monospace;
             font-size: 0.9em;
             border-radius: 3px;
             background: $color-grey;
@@ -204,7 +197,7 @@ ul {
             overflow: auto;
             max-width:560px;
             margin: 10px;
-			font-family: "Consolas", monaco, monospace;
+	    font-family: "Consolas-local", monaco, monospace;
             margin-bottom: 15px;
             padding: 10px;
             line-height: 1.5;
