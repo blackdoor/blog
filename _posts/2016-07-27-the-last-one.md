@@ -6,8 +6,9 @@ title: The last fake post.
 
 # Header1
 ## Header2
-### Header3
-#### Header4
+Some fun text about something
+## Header2.1
+Some more fun text, isn't this FUN?
 
 *italics*
 **bold**
