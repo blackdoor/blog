@@ -7,8 +7,10 @@ title: The last fake post.
 {: .alert-box-white }
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Nunc sapien magna, molestie at commodo ut, fringilla vel velit. Ut lectus lectus, tempor sit amet convallis in, rhoncus id libero.
 
-{: .alert-box-red }
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien magna, molestie at commodo ut, fringilla vel velit. Ut lectus lectus, tempor sit amet convallis in, rhoncus id libero.
+![Test Photo Caption]({{ site.baseurl }}/assets/img/test-photo.png)
+
+{: .photo-caption }
+Figure 1-1: Photo caption can be done by just typing beneath the image embed.
 
 # Header1
 Some text under the Header looks like this.
@@ -27,7 +29,7 @@ int i;
 int j = 0;
 for(i = 0; i < j; ++i)
 {
-    printf("%d\n", i);
+    printf("%d\n", i);010101010101010101010101010101010101010101010101010101010101
 }
 ```
 
