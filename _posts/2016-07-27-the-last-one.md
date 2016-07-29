@@ -39,4 +39,6 @@ and some `inline code` too.
 > one long block quote
 > or no?
 
+![](http://i.giphy.com/ZpV2NfvmrpF84.gif)
+
 -JT
