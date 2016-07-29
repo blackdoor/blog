@@ -236,6 +236,20 @@ ul {
             font-size: 0.9em;
             display: inline;
         }
+
+        .alert-box-white {
+            font-size: 1.0em;
+            padding: 10px;
+            background: $color-lgrey;
+            color: $color-dgrey;
+        }
+
+        .alert-box-red {
+            font-size: 1.0em;
+            padding: 10px;
+            background: $color-link;
+            color: $color-dgrey;
+        }
     }
 }
 
