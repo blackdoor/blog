@@ -186,7 +186,9 @@ ul {
             }
         }
         img {
-            width:100%;
+            max-width:600px;
+            display:block;
+            margin:auto;
         }
         code {
             padding-left: 3px;
@@ -244,12 +246,13 @@ ul {
             background: $color-link;
             color: $color-dgrey;
         }
-        .photo-box {
+        .photo-caption {
             font-size: 0.9em;
             color: $color-lgrey;
             text-align: center;
             background: $color-grey;
-            padding-bottom: 8px;
+            font-style: italic;
+            padding: 5px;
         }
     }
 }
