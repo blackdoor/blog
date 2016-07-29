@@ -186,12 +186,7 @@ ul {
             }
         }
         img {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            @media screen and (max-width: $br) {
-                width: 100%;
-                margin: auto;
-            }
+            width:100%;
         }
         code {
             padding-left: 3px;
@@ -237,19 +232,24 @@ ul {
             font-size: 0.9em;
             display: inline;
         }
-
         .alert-box-white {
             font-size: 1.0em;
             padding: 10px;
             background: $color-lgrey;
             color: $color-dgrey;
         }
-
         .alert-box-red {
             font-size: 1.0em;
             padding: 10px;
             background: $color-link;
             color: $color-dgrey;
+        }
+        .photo-box {
+            font-size: 0.9em;
+            color: $color-lgrey;
+            text-align: center;
+            background: $color-grey;
+            padding-bottom: 8px;
         }
     }
 }

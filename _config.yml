@@ -1,6 +1,7 @@
 # Blog settings
 baseurl: "/blog"
 permalink: /:title/
+url: "https://blackdoor.github.io/blog"
 
 
 # My variables
