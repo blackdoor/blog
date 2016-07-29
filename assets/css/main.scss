@@ -196,7 +196,7 @@ ul {
         code {
             padding-left: 3px;
             padding-right: 3px;
-	    font-family: "Consolas-local", monaco, monospace;
+	        font-family: "Consolas-local", monaco, monospace;
             font-size: 0.9em;
             border-radius: 3px;
             background: $color-grey;
@@ -208,8 +208,9 @@ ul {
             white-space: pre;
             overflow: auto;
             max-width:560px;
+            max-height: 800px;
             margin: 10px;
-	    font-family: "Consolas-local", monaco, monospace;
+	        font-family: "Consolas-local", monaco, monospace;
             margin-bottom: 15px;
             padding: 10px;
             line-height: 1.5;
