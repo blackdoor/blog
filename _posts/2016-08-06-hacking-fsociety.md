@@ -81,6 +81,8 @@ root@bento:~# nikto -host 10.0.2.5
 Our nikto scan turns up a bunch of interesting directories, including what looks like
 an admin portal for a WordPress site. Definitely worth checking out.
 
+**Still working on the rest of this, more to come tomorrow**
+
 ![](https://sushigirl.us/silicon/src/1465343157203.gif)
 
 -TC
