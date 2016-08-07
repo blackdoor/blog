@@ -5,7 +5,6 @@ title: Hacking f_society.
 ---
 
 # Introduction
-
 Mr. Robot is a show on AMC about a disturbed hacker attempting to thwart an omni-present
 oligarchy while at the same time trying to suppress a dark alter-ego modeled after his
 own father.
@@ -23,7 +22,6 @@ The Mr. Robot VM grabs a DHCP lease on boot, and I'd recommend running it and yo
 box on the same virtual subnet.
 
 # Recon
-
 First, let's scan the subnet to find Mr. Robot's VM.
 
 ```shell
@@ -56,6 +54,7 @@ HOP RTT     ADDRESS
 1   0.52 ms 10.0.2.5
 ```
 
+
 From the scan, we can see the VM is probably serving some sort of web-service.
 Before we investigate this further, however, let's run some more scans and see
 if we can dig up anything else.
@@ -81,8 +80,8 @@ root@bento:~# nikto -host 10.0.2.5
 Our nikto scan turns up a bunch of interesting directories, including what looks like
 an admin portal for a WordPress site. Definitely worth checking out.
 
-**Still working on the rest of this, more to come tomorrow**
+Navigating to the VMs IP in Firefox yields the following page:
 
-![](https://sushigirl.us/silicon/src/1465343157203.gif)
+![]({{ site.baseurl }}/assets/img/mr_robot.webm)
 
 -TC
