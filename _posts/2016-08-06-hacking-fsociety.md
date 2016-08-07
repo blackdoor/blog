@@ -84,4 +84,30 @@ Navigating to the VMs IP in Firefox yields the following page:
 
 ![]({{ site.baseurl }}/assets/img/mr_robot.webm)
 
+Looks like we've got our first key.
+
+```shell
+root@bento~# wget http://10.0.2.10/key-1-of-3.txt
+--2016-08-06 18:43:14--  http://10.0.2.10/key-1-of-3.txt
+Connecting to 10.0.2.10:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 33 [text/plain]
+Saving to: ‘key-1-of-3.txt’
+
+key-1-of-3.txt      100%[===================>]      33  --.-KB/s    in 0s      
+
+2016-08-06 18:43:14 (7.39 MB/s) - ‘key-1-of-3.txt’ saved [33/33]
+
+root@bento~# cat key-1-of-3.txt
+073403c8a58a1f80d943455fb30724b9
+```
+
+That's a pretty easy win in my book. I'll take it. Save the .dic file for
+later, there's no telling how it will come in handy but I doubt they let
+us have it for nothing.
+
+Time to revisit the nikto scan and see if we can turn up anything from the
+WordPress directories. Let's start with the login page, /wp-login.php.
+
+
 -TC
