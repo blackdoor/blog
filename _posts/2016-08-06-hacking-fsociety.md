@@ -84,6 +84,11 @@ Navigating to the VMs IP in Firefox yields the following page:
 
 ![]({{ site.baseurl }}/assets/img/mr_robot.webm)
 
+None of the commands are all that interesting. What is interesting,
+however, is the site's robots.txt file:
+
+![]({{ site.baseurl }}/assets/img/robots.png)
+
 Looks like we've got our first key.
 
 ```shell
