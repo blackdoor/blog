@@ -114,4 +114,37 @@ us have it for nothing.
 Time to revisit the nikto scan and see if we can turn up anything from the
 WordPress directories. Let's start with the login page, /wp-login.php.
 
+# Gaining Access
+
+Poking at the login page with a few default credentials doesn't really reveal
+anything interesting. Routing the request/response traffic through Burp also
+comes up short. Going back to the .dic file we downloaded earlier, it's pretty
+clearly some kind of wordlist. There are many duplicate words in there, however,
+so I hacked together a Python script to remove them:
+
+```Python
+with open('fsocity.dic') as infile: dic = infile.readlines()
+dic = set(dic)
+fsocity = open('fsocity_sorted.dic', 'w')
+for i in dic: fsocity.write("%s" % i)
+```
+
+Now, using the sorted wordlist and the username 'Elliot' (the most commonly occurring
+username in the .dic file) we can attempt to crack the WordPress login. I'll be
+using THC Hydra to do my web cracking, which means to properly format our Hydra
+commands we'll need to get the login request parameters. I'll use Burp Suite for
+this task. If you're not familiar with Burp, read up on its basic usage [here](https://portswigger.net/burp/help/)
+before trying this. In essence, we proxy our web browser through the localhost on
+port 8080 (the default for Burp), then attempt a login. Burp will intercept the
+request/response traffic, and allow us to see the login form's internals. What we're
+really looking for is the method (usually POST), the form parameters, and the failure
+response. With all of this information assembled, we can construct our hydra command:
+
+```shell
+root@bento~# hydra 10.0.2.10 http-form-post "/wp-login.php:user_login=^USER^&user_pass=^PASS^:lostpassword" -l Elliot -P fsocity_sorted.dic -t 10
+```
+
+From Burp, we have 'user_login' and 'user_pass' as the form params, and 'lostpassword'
+as the failure message.
+
 -TC
