@@ -122,7 +122,7 @@ comes up short. Going back to the .dic file we downloaded earlier, it's pretty
 clearly some kind of wordlist. There are many duplicate words in there, however,
 so I hacked together a Python script to remove them:
 
-```Python
+```python
 with open('fsocity.dic') as infile: dic = infile.readlines()
 dic = set(dic)
 fsocity = open('fsocity_sorted.dic', 'w')
