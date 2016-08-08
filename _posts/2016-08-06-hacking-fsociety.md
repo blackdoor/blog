@@ -21,7 +21,7 @@ in your favorite virtualization software (hard to go wrong with VirtualBox), and
 The Mr. Robot VM grabs a DHCP lease on boot, and I'd recommend running it and your offense
 box on the same virtual subnet.
 
-# Recon
+# Recon / Scanning
 First, let's scan the subnet to find Mr. Robot's VM.
 
 ```shell
@@ -83,5 +83,12 @@ an admin portal for a WordPress site. Definitely worth checking out.
 Navigating to the VMs IP in Firefox yields the following page:
 
 ![]({{ site.baseurl }}/assets/img/mr_robot.webm)
+
+None of the commands on this page are particularly interesting. What is interesting,
+however, is the site's robots.txt file, which contains this:
+
+![]({{ site.baseurl }}/assets/img/robots.png)
+
+And just like that, we have the first flag.
 
 -TC
