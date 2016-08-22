@@ -17,8 +17,13 @@
     - name: more
       url : https://tclostio.github.io
 
-- name: Nathaniel "kag0" Fischer-san 
+- name: Nathaniel "kag0" Fischer
   bio : Surfing the mortal coil; witness to the sunset of man. 
+  websites:
+    - name: github
+      url: https://github.com/kag0
+    - keybase:
+      url: https://keybase.io/nfischer
 
 - name: Jacob "yacklebeam" Troxel
   bio : Software Engineer and Hobbyist Game Developer. Long-time D&D player and Dungeon Master.  Cares too much about mechanical keyboards.  Currently working on better ways to detect virtual object collisions.  Interests include crafting props for tabletop games, building and running D&D campaigns, developing video game engines and infrastructures, other related software development, and of course, playing video games (lots of that).  B.S. in Computer Science.
