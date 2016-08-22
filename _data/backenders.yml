@@ -22,7 +22,7 @@
   websites:
     - name: github
       url: https://github.com/kag0
-    - keybase:
+    - name: keybase
       url: https://keybase.io/nfischer
 
 - name: Jacob "yacklebeam" Troxel
