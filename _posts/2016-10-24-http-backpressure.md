@@ -8,7 +8,7 @@ Back-pressure is when a component in a system is under load and it communicates 
 First, a **slow component depends on a fast component**. This is the desirable easy case, the dependent component requests to another component and quickly gets a reply back. No amount of load on the dependent component will cause it or any other components to be bottlenecked by the dependency and the performance of the dependency will not degrade. No special handling is needed here, but the system should be ready if this ceases to be the case.  
 Second, a **fast component depends on a slow component**. This becomes an issue when load which can be handled by the dependent component overloads the dependency. This is where we want the dependency to apply back-pressure to the dependent component so that it lessens the load on the dependency, preventing its performance from degrading.  
 
-## Identifying load
+# Identifying load
 
 How a component measures load is application dependent; a nonblocking server component might measure cycle time on the event loop, while a processing component might measure CPU usage. We'll introduce a simple hello world service (using spark framework in java) as our base component which uses CPU to detect load.
 
@@ -28,7 +28,7 @@ public class HelloWorld {
 
 > note: you'll also want your system to be elastic, which means that when a moderate load has been reached (let's say 70% CPU in this case) more resources should be added to this component. In practice this probably means bringing up another instance of the component to share the load.
 
-## Exerting back-pressure
+# Exerting back-pressure
 
 In any case, once a component identifies that it is overloaded, it should fail-fast with an error message to inform the caller of the back-pressure.   
 Our service simply returns a 500 with a primitive error:
@@ -38,9 +38,9 @@ before((request, response) -> { if(isOverloaded()) halt(500, "backpressure"); })
 get("/hello", (req, res) -> "Hello World");
 ```
 
-## Handling back-pressure
+# Handling back-pressure
 
-### With a dependent component
+## With a dependent component
 
 Typically a request is initated by some other component which is expecting a response. If this is the case then as soon as the component detects back-pressure from its dependencies, it should fail-fast and exert back-pressure on the caller. 
 
@@ -96,9 +96,9 @@ Now we can see that before we contact hello world, we check the status of the ci
 
 > note: we made a circuit breaker specifically for back-pressure and no others. In practice you will also want to add circuit breakers for other failures, such as timeouts or refused connections. When circuit breakers are activated for serious failures (timeout or dropped connection, not back-pressure) the system should raise alerts for its maintainers.
 
-### Without a dependent component
+## Without a dependent component
 
-#### Where the caller is a user
+### Where the caller is a user
 
 If the component recieving back-pressure is a user interface, then you've reached the end of the dependency chain, you can simply alert the user that the system is currently unavailable. 
 
@@ -106,7 +106,7 @@ If the component recieving back-pressure is a user interface, then you've reache
 
 of course not. An earlier note mentioned elasticity. Making your components elastic will enable the system to increase capacity before back-pressure is exerted. However at some point the system may not be able to scale quickly enough or there will be no more resources avaliable to allocate. In this case it is better to quickly display an error to the user than to make them wait for a timeout followed by an error.
 
-#### With a fire-and-forget caller
+### With a fire-and-forget caller
 
 In some cases a caller drops work off at the component and then leaves, not expecting a response to the work. Here as long as the work was successfully dropped off, the component must complete the work, even if one of its dependent components is exerting back-pressure. Such a component might look like this:
 
@@ -132,7 +132,7 @@ public class WorkerMan {
 
 The caller drops off messages which the worker then processes later using middleman. So what do we do if middleman is exerting back-pressure and we can't use him to do our work?
 
-##### Reschedule the work
+#### Reschedule the work
 
 One way or another the work needs to be done, and it can't be done right now, so we schedule for it to be done later. Depending on the system, there will be different ways to do this, but for us let's just leave the message on the queue and wait a bit.
 
@@ -158,7 +158,7 @@ new Thread(() -> {
 
 Better, now we're reducing load on middleman and getting our work done later.
 
-##### Exert back-pressure on the caller
+#### Exert back-pressure on the caller
 
 Unfortunately, we still have a problem. If we continue to allow callers to drop off work then we risk eating up resources holding all the work, losing the work, or getting so behind on work that it takes an unacceptable amount of time for us to catch up to it all. So what do we do? Fail fast and exert back-pressure on the caller. We aren't able to let a caller know about back-pressure when we process their work, but we can let callers know about back-pressure when they drop off their work. If we control the input end of our queue, we can use the circuit breaker again:
 
@@ -189,7 +189,7 @@ if(q.offer(req.params("message"))){
 
 Looks good, now we know when the queue is full that means we are receiving back-pressure.
 
-## Conclusion
+# Conclusion
 
 Now we have three components; they can operate under load, and will always respond quickly and intelligibly (although they may not have a successful response, because we didn't add anything to make them elastic).  
 Obviously the code examples here are rather simple, and use a particular language and libraries; however the concepts are applicable in any language with any http server. 
