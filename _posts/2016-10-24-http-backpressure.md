@@ -94,7 +94,10 @@ public static void main(String[] args) {
 
 Now we can see that before we contact hello world, we check the status of the circuit breaker. If the circuit breaker has been tripped then we know hello world is exerting back-pressure. By not making the call while back-pressure is being exerted, we don't put any more load on hello world, allowing it to catch up on it's work and recover.
 
-> note: we made a circuit breaker specifically for back-pressure and no others. In practice you will also want to add circuit breakers for other failures, such as timeouts or refused connections. When circuit breakers are activated for serious failures (timeout or dropped connection, not back-pressure) the system should raise alerts for its maintainers.
+> note: we made a circuit breaker specifically for back-pressure and no others. In practice you will also want to add circuit breakers for other failures, such as timeouts or refused connections. When circuit breakers are activated for serious failures (timeout or dropped connection, not back-pressure) the system should raise alerts for its maintainers.  
+
+> aside: it's worthwhile to distinguish between fail-fast and back-pressure. In a fail-fast system, if a component is going to fail as a result of a failed dependency, then it does so immediately rather than timing out or waiting for a failure to bubble up from several components downstream. It's also useful to make the distinction here between an error (bad request), and a failure (server caught on fire). Errors can take any amount of time to return, but failure should be immediate.
+In a system that exerts back-pressure, if a component is under high load, then it communicates that to dependent components which help temporarily decrease the load.
 
 ## Without a dependent component
 
