@@ -96,8 +96,9 @@ Now we can see that before we contact hello world, we check the status of the ci
 
 > note: we made a circuit breaker specifically for back-pressure and no others. In practice you will also want to add circuit breakers for other failures, such as timeouts or refused connections. When circuit breakers are activated for serious failures (timeout or dropped connection, not back-pressure) the system should raise alerts for its maintainers.  
 
-> aside: it's worthwhile to distinguish between fail-fast and back-pressure. In a fail-fast system, if a component is going to fail as a result of a failed dependency, then it does so immediately rather than timing out or waiting for a failure to bubble up from several components downstream. It's also useful to make the distinction here between an error (bad request), and a failure (server caught on fire). Errors can take any amount of time to return, but failure should be immediate.
-In a system that exerts back-pressure, if a component is under high load, then it communicates that to dependent components which help temporarily decrease the load.
+> aside: it's worthwhile to distinguish between fail-fast and back-pressure. In a fail-fast system, if a component is going to fail as a result of a failed dependency, then it does so immediately rather than timing out or waiting for a failure to bubble up from several components downstream. It's also useful to make the distinction here between an error (bad request), and a failure (server caught on fire). Errors can take any amount of time to return, but failure should be immediate.  
+In a system that exerts back-pressure, if a component is under high load, then it communicates that to dependent components which help temporarily decrease the load.  
+A system can fail-fast, or exert back-pressure, or both (like the one in this article).
 
 ## Without a dependent component
 
