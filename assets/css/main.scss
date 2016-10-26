@@ -125,7 +125,7 @@ ul {
 .post {
     padding-bottom: 30px;
     &__title {
-        font-size: 1.6em;
+        font-size: 2.0em;
         font-weight: 500;
         margin-top: 20px;
         margin-bottom: 5px;
@@ -133,29 +133,40 @@ ul {
     &__date {
         font-size: 1em;
         font-style: italic;
+        border-bottom: 1px solid;
+        padding-bottom: 5px;
     }
     &__content {
         padding-top: 20px;
         h1 {
-            font-size: 1.5em;
+            font-size: 1.6em;
             font-weight: 500;
             margin-top: 30px;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             padding-bottom: 5px;
+            border-bottom: 1px solid $color-link;
             color: $color-link;
         }
         h2 {
-            font-size: 1.0em;
+            font-size: 1.2em;
             font-weight: 500;
             margin-top: 10px;
             margin-bottom: 5px;
             color: $color-link;
         }
+        h3 {
+            font-size: 1.0em;
+            font-weight: 500;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: $color-link;
+            font-style: italic;
+        }
         p {
             font-size: 1em;
             line-height: 150%;
             margin-bottom: 15px;
-            align: justify;
+            text-align: justify;
         }
         a {
             text-decoration: underline;
