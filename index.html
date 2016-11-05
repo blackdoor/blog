@@ -6,10 +6,12 @@ layout: default
 <div class="blog">
     <table>
         {% for post in site.posts %}
-        <tr class="post-line">
-            	<td class="date">[{{ post.date | date: '%m.%d.%Y' }}] {{ post.author }}:</td>
-            	<td class="hyper"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></td>
-        </tr>
+        	{% unless post.draft %}
+	        <tr class="post-line">
+	            	<td class="date">[{{ post.date | date: '%m.%d.%Y' }}] {{ post.author }}:</td>
+	            	<td class="hyper"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></td>
+	        </tr>
+	        {% endunless %}
         {% endfor %}
     </table>
 </div>
