@@ -2,6 +2,7 @@
 layout: post
 author: jacob
 title: The last fake post.
+hidden: true
 ---
 
 {: .alert-box-white }
