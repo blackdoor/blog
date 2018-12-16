@@ -1,4 +1,8 @@
-# Web app front ends for people who don't want to have to continually re-learn front end
+---
+layout: post
+author: nathan
+title: Web app front ends for people who don't want to have to continually re-learn front end
+---
 
 > If you're a javscript/front end developer who follows the latest sophisticated frameworks, or a lead with a team of rockstar front end developers looking to build the best app your designer can conceive of; then this isn't for you.
 
