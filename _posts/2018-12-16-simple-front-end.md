@@ -77,6 +77,8 @@ Since 2012 handlebars has been the go-to javascript templating library. We'll us
 Goodbye XMLHttpRequest! 
 I know I said three dependencies, but fetch is built into the browser making it a very reliable choice and technically not a dependency.
 
+> note: fetch is not supported in internet explorer, so if you need to support legacy browsers you'll want to use [github's fetch polyfil](https://github.com/github/fetch)
+
 ### The pattern
 
 The pattern is very simple
