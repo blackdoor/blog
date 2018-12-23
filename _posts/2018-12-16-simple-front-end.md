@@ -39,7 +39,7 @@ The modern Single Page Application is largely script driven.
 * Asynchronous 
 	* What's shown on to the user is driven by user interaction or programmatic event resulting in scripts changing some content on the current page
 * Client side rendering
-	* Little or no HTML is delivered to the browser. Rather, javscript creates all the elements on the page.
+	* Little or no HTML is delivered to the browser. Rather, javscript creates all the elements on the page (granted, some modern frameworks support server side rendering for the initial state, and are script driven after that).
 
 #### Pros
 * Most frameworks provide powerful two-way data binding to template and update what's on the page at any time without reloading
@@ -47,7 +47,7 @@ The modern Single Page Application is largely script driven.
 * Static scripts can be hosted on a CDN and scale well
 #### Cons
 * May perform poorly on lower end devices due to being script driven
-* First load may be slow due to large script dependencies and entire app needing to be sent at once
+* First load may be slower due to the entire app needing to be sent at once
 * Mix of versioning, technologies, and compatibility can result in complicated build processes with polyfilling, transpiling, and dependency resolution
 
 ### Somewhere in the middle
@@ -58,6 +58,7 @@ What we'll cover today.
 #### Pros
 * Performs well across a range of devices
 * Static parts of pages can be cached and hosted on a CDN
+* Simplicity reduces learning curve
 #### Cons
 * New or refreshed content is accessed by a page reload, but that shouldn't be as much of a problem as it is with server side rendering since most of the page is cached
 
@@ -67,7 +68,10 @@ So what are we actually talking about? In short it's two (three) dependencies:
 ### Bootstrap
 Bootstrap makes it easy to quickly set up the style and layout of a page. It's been around since 2011 and hasn't changed too radically since then, but it has grown an abundance of documentation, community support, and usage guides. If you were inclined you could swap this out with any other library that does styling and layout like Google's material design for web. 
 ### jQuery 
-jQuery is a transitive dependency from bootstrap, we'll only really use it directly to DRY up parts of our pages like headers and footers. When it comes to web libraries that are widely used, stable, and not going anywhere there is nothing that comes close to jQuery.
+jQuery is a transitive dependency from bootstrap, we'll only really use it directly to DRY up parts of our pages like headers and footers. 
+> This requires import of the full jQuery library as opposed to the slim version required by boostrap. To optimize performance we could use handlebars partials instead of jQuery for the headers and footers.
+
+When it comes to web libraries that are widely used, stable, and not going anywhere there is nothing that comes close to jQuery.
 ### Handlebars
 From its readme:
 > Handlebars.js is an extension to the [Mustache templating language](http://mustache.github.com/) created by Chris Wanstrath. Handlebars.js and Mustache are both logicless templating languages that keep the view and the code separated like we all know they should be.
@@ -89,7 +93,7 @@ The pattern is very simple
 
 ## Example
 
-You can see a demo of an app built this way [here](https://kag0.github.io/handlestrap) (log in with any username and password).
+You can see a demo of a typical app with login built this way [here](https://kag0.github.io/handlestrap) (log in with any username and password).
 
 Content pages [like this one](https://github.com/kag0/handlestrap/blob/master/whosits.html) are very simple at just over 60 lines long.
 
