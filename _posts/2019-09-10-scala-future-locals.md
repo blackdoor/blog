@@ -16,13 +16,13 @@ In this article we'll cover an example system with two services (using Akka HTTP
 
 Let's say we have a simple system with two services; a and b. Outside requests come in to a, which sends a random greeting to b, who simply logs the greeting and replies with thanks which a sends back to the external caller. 
 
-<script src="http://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/6e075361327a0280c0af6dfcaa753e2bbb7fb08b/a/src/a/Service.scala"></script>
+<script src="https://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/6e075361327a0280c0af6dfcaa753e2bbb7fb08b/a/src/a/Service.scala"></script>
 
-<script src="http://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/6e075361327a0280c0af6dfcaa753e2bbb7fb08b/b/src/b/Service.scala"></script>
+<script src="https://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/6e075361327a0280c0af6dfcaa753e2bbb7fb08b/b/src/b/Service.scala"></script>
 
 Both services use a simple logging directive to record request information and how long the request took to complete.
 
-<script src="http://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/6e075361327a0280c0af6dfcaa753e2bbb7fb08b/common/src/common/LoggingDirective.scala"></script>
+<script src="https://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/6e075361327a0280c0af6dfcaa753e2bbb7fb08b/common/src/common/LoggingDirective.scala"></script>
 
 If we do a simple `curl http://localhost:8080`
 
@@ -43,7 +43,7 @@ Now suppose we want to keep track of how much time the request spends in differe
 
 We could tweak a's service to measure how long it takes to receive b's response.
 
-<script src="http://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/d68a28b31f14c43142401f9c60de70749890fbb8/a/src/a/Service.scala"></script>
+<script src="https://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/d68a28b31f14c43142401f9c60de70749890fbb8/a/src/a/Service.scala"></script>
 
 > [my-system-akka.actor.default-dispatcher-4] INFO a.Service - b took 211ms to respond  
 > [my-system-akka.actor.default-dispatcher-4] INFO common.LoggingDirective - responded to GET http://localhost:8080/ HTTP/1.1 in 221ms
@@ -85,25 +85,25 @@ Now we can get into the meat of why you're reading this article. Let's add corre
 
 To make the `Local` available globally we'll just put it in an object 
 
-<script src="http://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/common/src/common/CorrelationId.scala"></script>
+<script src="https://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/common/src/common/CorrelationId.scala"></script>
 
 Next let's make a directive that will either use a correlation ID from a header in an incoming request (in the case of b) or generate a new one (in the case of a)
 
-<script src="http://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/common/src/common/CorrelationIdDirectives.scala"></script>
+<script src="https://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/common/src/common/CorrelationIdDirectives.scala"></script>
 
 To make the `Local` propagate correctly when we use futures we need to wrap the `ExecutionContext` used by Akka and our services. This basically means we'll create a Monix `TracingScheduler` from an `ExecutionContext` and use that when we create our `ActorSystem`.
 
-<script src="http://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/common/src/common/HttpApp.scala"></script>
+<script src="https://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/common/src/common/HttpApp.scala"></script>
 
 Now that we have everything set up, we can use `CorrelationId.local()` in our logs and know that we'll always get an ID unique to the current request.
 
 Here's what that looks like in our logging directive and two services
 
-<script src="http://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/common/src/common/LoggingDirective.scala"></script>
+<script src="https://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/common/src/common/LoggingDirective.scala"></script>
 
-<script src="http://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/b/src/b/Service.scala"></script>
+<script src="https://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/b/src/b/Service.scala"></script>
 
-<script src="http://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/a/src/a/Service.scala"></script>
+<script src="https://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/a/src/a/Service.scala"></script>
 
 Now our `a` logs have
 
@@ -138,4 +138,4 @@ The only thing left to do is aggregate logs from a and b into the same place. St
 
 On rare occasion a third party library will return a `Future` without the local context. The Akka HTTP client's `Http().singleRequest` is one example of this. To work around this we can use this helper method to put the context back in the future.
 
-<script src="http://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/common/src/common/package.scala"></script>
+<script src="https://gist-it.appspot.com/https://github.com/kag0/scala-log-tracing/blob/aeac5dbd17f1b8690c67de20beedab27f1e6e73e/common/src/common/package.scala"></script>
