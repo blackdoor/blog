@@ -98,3 +98,7 @@ You can see a demo of a typical app with login built this way [here](https://kag
 Content pages [like this one](https://github.com/kag0/handlestrap/blob/master/whosits.html) are very simple at just over 60 lines long.
 
 > Closing note: in contrast to the example app, you will want to precompile your handlebars templates. This will allow your pages to load much faster since the templates don't need to be compiled on each page load. All you need to do is include the precompiled templates in a script tag. You can see the same example app with precompiled templates [here](https://github.com/kag0/handlestrap/blob/precompile/whosits.html).
+
+## Resources
+
+https://htmldom.dev - see how to do simple to advanced functionality in vanilla JS
