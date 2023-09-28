@@ -1,2 +1,6 @@
-# Blog
-
+---
+hide:
+  - navigation
+  - toc
+---
+<!-- blog -->
