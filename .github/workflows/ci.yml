@@ -1,0 +1,62 @@
+name: documentation
+on:
+  push:
+    branches:
+      - main
+
+env:
+  PYTHON_VERSION: 3.x
+
+permissions:
+  contents: write
+
+jobs:
+  documentation:
+    name: Build documentation
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python runtime
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Set the date environmental variable
+        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+
+      - name: Set up build cache
+        uses: actions/cache@v3
+        id: cache
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+
+      - name: Install dependencies
+        run: sudo apt-get install pngquant
+
+      - name: Install Python dependencies
+        run: |
+          pip install \
+            "cairosvg>=2.5" \
+            "mkdocs-git-committers-plugin-2>=1.1.1" \
+            "mkdocs-git-revision-date-localized-plugin>=1.0" \
+            "mkdocs-minify-plugin>=0.3" \
+            "mkdocs-material-extensions" \
+            "mkdocs-rss-plugin>=1.2" \
+            "mkdocs-redirects>=1.0" \
+            "pymdown-extensions" \
+            "mkdocs-material" \
+            "lxml" \
+            "pillow<10"
+
+      - name: Deploy documentation
+        run: |
+          mkdocs gh-deploy --force
+          mkdocs --version
