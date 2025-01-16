@@ -2,117 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://blackdoor.github.io/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/2017/01/14/algebraic-data-types-in-java/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/2020/05/30/bowline-with-a-bight-for-tying-in-to-the-middle-of-a-line/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/2023/09/28/modern-breach-hunting-for-red-team-applications/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/2016/08/06/hacking-f_society/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/2016/08/21/hypermedia-apis-in-play-framework-with-the-blackdoor-hate-library/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/2020/09/30/kubernetes-packet-capture-for-dummies/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/2016/08/08/complete-guide-to-continuous-deployment-to-maven-central-from-travis-ci/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/1970/01/01/post-style-testing/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/2019/09/10/log-tracing-with-plain-old-scala-futures/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/2016/12/11/sift4-string-comparison-in-java/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/2018/12/16/web-app-front-ends-for-people-who-dont-want-to-have-to-continually-re-learn-front-end/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/2016/08/10/converting-thumbstick-input-to-useful-n-directional-input/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/archive/2023/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/archive/2020/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/archive/2019/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/archive/2018/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/archive/2017/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/archive/2016/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/archive/1970/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/category/blog/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/page/2/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
     <url>
          <loc>https://blackdoor.github.io/category/blog/page/2/</loc>
-         <lastmod>2023-09-28</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-16</lastmod>
     </url>
 </urlset>
