@@ -16,7 +16,6 @@ When climbing it's common to need to "tie in", or attach yourself to a rope line
 Typically you tie in to one of the ends of the line, and there are well established ways of doing this.
 However, sometimes it's necessary to tie into the middle of the line. 
 <!-- more -->
-When simul climbing, for example. 
 Practices around tying into the middle of a line are less established than tying in to the end. Here we'll cover some of the different knots used as well as go into detail on one which is arguably the best, the bowline with a bight.
 
 ## Figure-eight on a bight
